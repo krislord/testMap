@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MapsModule } from './maps/maps.module';
 import { HttpClientModule } from '@angular/common/http';
-// import { StoreModule } from '@ngrx/store';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
