@@ -1,0 +1,9 @@
+<div class="map-wrap">
+  <map [map]="map"></map>
+
+</div>
+
+
+<div class="coords">
+  <app-mouse-position [map]="map"  positionTemplate="{x}, {y} m" (coordsAndTS)="updateDataArr($event)"></app-mouse-position>
+</div>
