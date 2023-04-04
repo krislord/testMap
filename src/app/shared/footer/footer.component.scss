@@ -1,0 +1,27 @@
+
+
+.footer-wrap {
+  margin-top: 2.5rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+    footer {
+      .demoData {
+        display: flex;
+        flex-direction: column;
+        justify-self: center;
+        align-items: center;
+        column-gap: 15px;
+        background-color: crimson;
+        color: white;
+        padding: 4px 8px;
+        text-align: center;
+        border-radius: 5px;
+        span {
+          font-size: 16px;
+          font-weight: bold;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+      }
+    }
+}

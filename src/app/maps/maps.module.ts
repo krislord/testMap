@@ -8,13 +8,15 @@ import { DisplayMapComponent } from './display-map/display-map.component';
 import { MapDataComponent } from './map-data/map-data.component';
 import { ScaleLineComponent } from './scale-line/scale-line.component';
 import { MousePositionComponent } from './mouse-position/mouse-position.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
   declarations: [MapComponent, DisplayMapComponent, MapDataComponent, ScaleLineComponent, MousePositionComponent],
   imports: [
     CommonModule,
-    MapsRoutingModule
+    MapsRoutingModule,
+    SharedModule
   ],
   providers: [MapsService, DecimalPipe]
 })

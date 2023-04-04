@@ -38,6 +38,7 @@ export class MousePositionComponent implements OnInit {
     this.control = new ControlMousePosition({
       className: 'mouseposition-control',
       coordinateFormat: (coordinates: number[]) => {
+        return '';
         return this.formatter
         .numberCoordinates(coordinates, 4, this.positionTemplate)
       },

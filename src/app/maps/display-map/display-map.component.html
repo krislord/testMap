@@ -1,9 +1,16 @@
+
+<app-footer></app-footer>
+
 <div class="map-wrap">
   <map [map]="map"></map>
+  <div class="childrens">
+    <div class="content"><span>Enjoy using our map!</span></div>
+    <div class="coords">
+      <app-mouse-position [map]="map"  positionTemplate="{x}, {y} m" (coordsAndTS)="updateDataArr($event)"></app-mouse-position>
 
+    </div>
+  </div>
 </div>
 
 
-<div class="coords">
-  <app-mouse-position [map]="map"  positionTemplate="{x}, {y} m" (coordsAndTS)="updateDataArr($event)"></app-mouse-position>
-</div>
+

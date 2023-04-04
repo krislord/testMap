@@ -5,6 +5,8 @@ import OSM from "ol/source/OSM";
 import TileLayer from "ol/layer/Tile";
 import View from "ol/View";
 import { MapsService } from '../maps-service.service';
+import { Store } from '@ngrx/store';
+import { addDemo } from 'src/app/actions/demo.action';
 
 @Component({
   selector: 'app-display-map',
@@ -14,7 +16,7 @@ import { MapsService } from '../maps-service.service';
 export class DisplayMapComponent implements OnInit {
    isDisplayed!:boolean;
    map:Map;
-  constructor(private _dataService:MapsService) {
+  constructor(private _dataService:MapsService, private store: Store) {
 
   }
 
@@ -34,8 +36,8 @@ export class DisplayMapComponent implements OnInit {
   }
 
   updateDataArr(e: {clickTime:string,coordinates:string}):void{
-      this._dataService.mapDataArr.push(e);
-       console.log(this._dataService.mapDataArr)
+      this._dataService.addNewMapData(e);
+      this.store.dispatch(addDemo({payload: {timestamp: e.clickTime, coords: e.coordinates}}))
   }
 
 }

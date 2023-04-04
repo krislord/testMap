@@ -1,0 +1,10 @@
+<div class="footer-wrap">
+  <footer>
+    <div class="demoData" *ngIf="isShown;else noData">
+
+      <span>{{demoData.timestamp}}</span>
+      <span>{{demoData.coords | splitted}}</span>
+    </div>
+    <ng-template #noData>No Data..</ng-template>
+  </footer>
+</div>

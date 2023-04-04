@@ -1,16 +1,27 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MapsService {
   mapDataArr: {clickTime:string,coordinates:string}[] = [];
-  constructor(private http: HttpClient) { }
+  private mapDataSubject = new Subject<void>();
+  constructor(private http: HttpClient) {
+    this.mapDataSubject.subscribe(() => {
+     this.updateCoordinates().subscribe(console.log);
+    })
+  }
 
 
-  updateCoordinates ():Observable<any> {
-    return this.http.get('')
+
+public addNewMapData(newData: { clickTime: string; coordinates: string }): void {
+    this.mapDataArr.push(newData);
+    this.mapDataSubject.next();
+  }
+
+  private updateCoordinates ():Observable<any> {
+    return this.http.post('http://localhost:3000/upload', {data: this.mapDataArr});
   }
 }
