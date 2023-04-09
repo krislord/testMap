@@ -17,3 +17,11 @@ export const addDemo = createAction(
   '[Demo] Add Demo',
   props<{ payload: Demo }>()
 );
+
+
+
+
+export const loadDataSuccess = createAction(
+  '[Demo] Load Data Success',
+  props<{ payload: any }>()
+);

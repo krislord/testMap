@@ -9,6 +9,8 @@ import { MapDataComponent } from './map-data/map-data.component';
 import { ScaleLineComponent } from './scale-line/scale-line.component';
 import { MousePositionComponent } from './mouse-position/mouse-position.component';
 import { SharedModule } from '../shared/shared.module';
+import { EffectsModule } from '@ngrx/effects';
+import { DemoEffects } from './effects/demo.effects';
 
 
 @NgModule({
@@ -16,7 +18,8 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     MapsRoutingModule,
-    SharedModule
+    SharedModule,
+    EffectsModule.forRoot([DemoEffects])
   ],
   providers: [MapsService, DecimalPipe]
 })
