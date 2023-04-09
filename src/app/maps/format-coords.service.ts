@@ -13,7 +13,7 @@ export class FormatCoordsService {
     fractionDigits: number = 0,
     template?: string,
   ) {
-    template = template || '{x} {y}';
+    // template = template || '{x} {y}';
 
     const x = coordinates[0];
   const y = coordinates[1];
