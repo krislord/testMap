@@ -25,3 +25,9 @@ export const loadDataSuccess = createAction(
   '[Demo] Load Data Success',
   props<{ payload: any }>()
 );
+
+
+export const loadDataFailure = createAction(
+  '[Demo] Load Data Failure',
+  props<{ error: any }>()
+);

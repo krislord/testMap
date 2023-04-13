@@ -16,7 +16,6 @@ export class FooterComponent implements OnInit {
   ngOnInit(): void {
     this.store.select('demoStore').pipe(map(data => this.demoData = data),filter((demo) => !!demo.coords && !!demo.timestamp),tap((active) => {
         this.isShown = true;
-        console.log(active)
     })).subscribe();
   }
 

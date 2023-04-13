@@ -41,7 +41,6 @@ export class DisplayMapComponent implements OnInit {
   }
 
   updateDataArr(e: {clickTime:string,coordinates:string}):void{
-      // this._dataService.addNewMapData(e);
       this.store.dispatch(addDemo({payload: {timestamp: e.clickTime, coords: e.coordinates}}))
   }
 
